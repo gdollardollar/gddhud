@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FF47138A1CD04227004A05C1 /* GddHud.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4713881CD04227004A05C1 /* GddHud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF47138B1CD04227004A05C1 /* GddHud.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4713891CD04227004A05C1 /* GddHud.m */; };
+		FF47138E1CD0D617004A05C1 /* GddHud+DefaultContent.h in Headers */ = {isa = PBXBuildFile; fileRef = FF47138C1CD0D617004A05C1 /* GddHud+DefaultContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF47138F1CD0D617004A05C1 /* GddHud+DefaultContent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47138D1CD0D617004A05C1 /* GddHud+DefaultContent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +18,8 @@
 		FF4713821CD041FB004A05C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF4713881CD04227004A05C1 /* GddHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GddHud.h; sourceTree = "<group>"; };
 		FF4713891CD04227004A05C1 /* GddHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GddHud.m; sourceTree = "<group>"; };
+		FF47138C1CD0D617004A05C1 /* GddHud+DefaultContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GddHud+DefaultContent.h"; sourceTree = "<group>"; };
+		FF47138D1CD0D617004A05C1 /* GddHud+DefaultContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GddHud+DefaultContent.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 			children = (
 				FF4713881CD04227004A05C1 /* GddHud.h */,
 				FF4713891CD04227004A05C1 /* GddHud.m */,
+				FF47138C1CD0D617004A05C1 /* GddHud+DefaultContent.h */,
+				FF47138D1CD0D617004A05C1 /* GddHud+DefaultContent.m */,
 				FF4713821CD041FB004A05C1 /* Info.plist */,
 			);
 			path = GddHud;
@@ -62,6 +68,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF47138E1CD0D617004A05C1 /* GddHud+DefaultContent.h in Headers */,
 				FF47138A1CD04227004A05C1 /* GddHud.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF47138B1CD04227004A05C1 /* GddHud.m in Sources */,
+				FF47138F1CD0D617004A05C1 /* GddHud+DefaultContent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +289,7 @@
 				FF4713871CD041FB004A05C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
