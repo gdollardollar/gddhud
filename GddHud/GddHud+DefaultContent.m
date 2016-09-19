@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 gdd. All rights reserved.
 //
 
-#import "GddHud+DefaultContent.h"
+#import "GddHud.h"
 
 @implementation GddHud (DefaultContent)
 

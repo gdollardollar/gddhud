@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FF47138A1CD04227004A05C1 /* GddHud.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4713881CD04227004A05C1 /* GddHud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF47138B1CD04227004A05C1 /* GddHud.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4713891CD04227004A05C1 /* GddHud.m */; };
-		FF47138E1CD0D617004A05C1 /* GddHud+DefaultContent.h in Headers */ = {isa = PBXBuildFile; fileRef = FF47138C1CD0D617004A05C1 /* GddHud+DefaultContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF47138F1CD0D617004A05C1 /* GddHud+DefaultContent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47138D1CD0D617004A05C1 /* GddHud+DefaultContent.m */; };
 /* End PBXBuildFile section */
 
@@ -18,7 +17,6 @@
 		FF4713821CD041FB004A05C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF4713881CD04227004A05C1 /* GddHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GddHud.h; sourceTree = "<group>"; };
 		FF4713891CD04227004A05C1 /* GddHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GddHud.m; sourceTree = "<group>"; };
-		FF47138C1CD0D617004A05C1 /* GddHud+DefaultContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GddHud+DefaultContent.h"; sourceTree = "<group>"; };
 		FF47138D1CD0D617004A05C1 /* GddHud+DefaultContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GddHud+DefaultContent.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +52,6 @@
 			children = (
 				FF4713881CD04227004A05C1 /* GddHud.h */,
 				FF4713891CD04227004A05C1 /* GddHud.m */,
-				FF47138C1CD0D617004A05C1 /* GddHud+DefaultContent.h */,
 				FF47138D1CD0D617004A05C1 /* GddHud+DefaultContent.m */,
 				FF4713821CD041FB004A05C1 /* Info.plist */,
 			);
@@ -68,7 +65,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF47138E1CD0D617004A05C1 /* GddHud+DefaultContent.h in Headers */,
 				FF47138A1CD04227004A05C1 /* GddHud.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,7 +96,7 @@
 		FF4713741CD041FB004A05C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = gdollardollar;
 				TargetAttributes = {
 					FF47137C1CD041FB004A05C1 = {
@@ -162,8 +158,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -210,8 +208,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -241,6 +241,7 @@
 		FF4713861CD041FB004A05C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -257,6 +258,7 @@
 		FF4713871CD041FB004A05C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
