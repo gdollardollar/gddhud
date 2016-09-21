@@ -318,29 +318,21 @@
     
 #pragma mark Default method implementation
     
-- (void)animateShowWithCompletion:(void (^)(BOOL))completion
+- (void)animateShowWithCompletion:(void (^ __nullable)(BOOL))completion
     {
         self.alpha=0;
         self.coverView.alpha=0;
         [UIView animateWithDuration:.3f animations:^{
             self.alpha=1;
             self.coverView.alpha=1;
-        } completion:^(BOOL finished) {
-            if(completion){
-                completion(finished);
-            }
-        }];
+        } completion:completion];
     }
-- (void)animateDismissWithCompletion:(void (^)(BOOL))completion
+- (void)animateDismissWithCompletion:(void (^ __nullable)(BOOL))completion
     {
         [UIView animateWithDuration:.3f animations:^{
             self.alpha=0;
             self.coverView.alpha=0;
-        } completion:^(BOOL finished) {
-            if(completion){
-                completion(finished);
-            }
-        }];
+        } completion:completion];
     }
     
 #pragma mark - Showing and Dismissing
@@ -371,16 +363,16 @@
     return hud;
 }
     
-    + (instancetype) showText:(NSString *)text {
-        id hud = [[self alloc] init];
-        [hud setText: text];
-        [hud setDismissesOnCoverTap];
-        [hud show];
-        return hud;
-    }
-    
-    
-    @end
++ (instancetype)show:(NSString *)text {
+    id hud = [[self alloc] init];
+    [hud setText: text];
+    [hud setDismissesOnCoverTap];
+    [hud show];
+    return hud;
+}
+
+
+@end
 
 //================================================================================================
 //  _HudManager Implementation

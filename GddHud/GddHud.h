@@ -15,7 +15,7 @@ FOUNDATION_EXPORT const unsigned char GddHudVersionString[];
 
 @class GddHud;
 
-typedef BOOL(^GddHudActionBlock)(GddHud *hud, NSInteger index);//returns true if should hide
+typedef BOOL(^GddHudActionBlock)(GddHud * _Nonnull hud, NSInteger index);//returns true if should hide
 
 typedef NS_ENUM(NSUInteger, GddHudContentType) {
     GddHudContentTypeNone,
@@ -34,60 +34,60 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
     /**
      *  Returns the currently displayed Hud. nil if there is none
      */
-+ (instancetype)displayedHud;
++ (nullable instancetype)displayedHud;
     
-    /**
-     *  User set identifier
-     */
-    @property (nonatomic,assign) int identifier;
-    
-    /**
-     *  User set info
-     */
-    @property (nonatomic,strong) id userInfo;
-    
-    /**
-     *  Does not work if set after hud is displayed.
-     *  Defaults to view with <code>coverColor</code>
-     */
-    @property (nonatomic, strong) UIView *coverView;
-    
-    /**
-     *  The action that is called when the cover is tapped.
-     */
-    @property (nonatomic, strong) GddHudActionBlock coverTapActionBlock;
-    
+/**
+ *  User set identifier
+ */
+@property (nonatomic,assign) int identifier;
+
+/**
+ *  User set info
+ */
+@property (nonatomic, strong, nullable) id userInfo;
+
+/**
+ *  Does not work if set after hud is displayed.
+ *  Defaults to view with <code>coverColor</code>
+ */
+@property (nonatomic, strong, nullable) UIView *coverView;
+
+/**
+ *  The action that is called when the cover is tapped.
+ */
+@property (nonatomic, strong, nullable) GddHudActionBlock coverTapActionBlock;
+
 - (void)setDismissesOnCoverTap;
     
-    //  ============================================
-    //  Setting content
-    //  ============================================
+//  ============================================
+//  Setting content
+//  ============================================
+
+@property (nonatomic, assign, readonly) BOOL willAnimateContentChange;
+
+@property (nonatomic, weak, readonly, null_unspecified) UIView *contentView;
+
+@property (nonatomic, assign, readonly) GddHudContentType contentType;
     
-    @property (nonatomic, assign, readonly) BOOL willAnimateContentChange;
+- (void)setContent:(UIView * _Nonnull)content;
     
-    @property (nonatomic, weak, readonly) UIView *contentView;
+/**
+ *  Base method for setting content.
+ *  All other content method use this one.
+ */
+- (void)setContent:(UIView * _Nonnull)content animated:(BOOL)animated;
     
-    @property (nonatomic, assign, readonly) GddHudContentType contentType;
+- (void)setContent:(UIView * _Nonnull)content animated:(BOOL)animated contentType:(GddHudContentType)contentType;
     
-- (void)setContent:(UIView *)content;
-    
-    /**
-     *  Base method for setting content.
-     *  All other content method use this one.
-     */
-- (void)setContent:(UIView *)content animated:(BOOL)animated;
-    
-- (void)setContent:(UIView *)content animated:(BOOL)animated contentType:(GddHudContentType)contentType;
-    
-    @property (nonatomic, assign, readonly, getter=isLoading) BOOL loading;
+@property (nonatomic, assign, readonly, getter=isLoading) BOOL loading;
     
 - (void)setLoading;
     
-    //  ============================================
-    //  Show / Dismiss
-    //  ============================================
-    
-    @property (nonatomic, assign, readonly) BOOL isDisplayed;
+//  ============================================
+//  Show / Dismiss
+//  ============================================
+
+@property (nonatomic, assign, readonly) BOOL isDisplayed;
     
 - (void)showIfNeeded;
     
@@ -95,37 +95,37 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
     
 - (void)dismiss;
     
-    //  ============================================
-    //  UIAppearance Theming
-    //  ============================================
+//  ============================================
+//  UIAppearance Theming
+//  ============================================
+
+@property (nonatomic, assign) CGFloat cornerRadius UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, copy, nullable) UIColor *coverColor UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, assign) UIEdgeInsets contentInsets UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, copy, nullable) UIColor *activityIndicatorColor UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, copy, nullable) UIColor *textColor UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, copy, nullable) UIFont *font UI_APPEARANCE_SELECTOR;
+
+//  ============================================
+//  Override this for custom theming
+//  ============================================
+
+- (void)animateShowWithCompletion:(void(^ __nullable)(BOOL finished))completion;
     
-    @property (nonatomic, assign) CGFloat cornerRadius UI_APPEARANCE_SELECTOR;
+- (void)animateDismissWithCompletion:(void(^ __nullable)(BOOL finished))completion;
     
-    @property (nonatomic, copy) UIColor *coverColor UI_APPEARANCE_SELECTOR;
+//  ============================================
+//  Show
+//  ============================================
     
-    @property (nonatomic, assign) UIEdgeInsets contentInsets UI_APPEARANCE_SELECTOR;
++ (nonnull instancetype)loader;
     
-    @property (nonatomic, copy) UIColor *activityIndicatorColor UI_APPEARANCE_SELECTOR;
-    
-    @property (nonatomic, copy) UIColor *textColor UI_APPEARANCE_SELECTOR;
-    
-    @property (nonatomic, copy) UIFont *font UI_APPEARANCE_SELECTOR;
-    
-    //  ============================================
-    //  Override this for custom theming
-    //  ============================================
-    
-- (void)animateShowWithCompletion:(void(^)(BOOL finished))completion;
-    
-- (void)animateDismissWithCompletion:(void(^)(BOOL finished))completion;
-    
-    //  ============================================
-    //  Show
-    //  ============================================
-    
-+ (instancetype)loader;
-    
-+ (instancetype)showText:(NSString *)text;
++ (nonnull instancetype)show:(NSString * _Nullable)text;
     
 @end
 
@@ -135,34 +135,34 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
     //  Default Content
     //  ============================================
     
-- (NSString *)defaultText;
+- (nullable NSString *)defaultText;
     
-- (NSString *)defaultButtonTitle;
+- (nullable NSString *)defaultButtonTitle;
     
 - (CGFloat)labelButtonVMargin;
     
-- (UIView *)label:(NSString *)text;
+- (nonnull UIView *)label:(NSString * _Nullable)text;
     
-- (UIButton *)button:(NSString *)text;
+- (nonnull UIButton *)button:(NSString * _Nullable)text;
     
-- (UIButton *)defaultButton:(NSString *)text;
-    
-    /**
-     * @note Animates if the superview of the hud is not nil
-     */
-- (void)setText:(NSString *)text buttons:(NSArray *)buttonTitles defaultButtonIndex:(int)index
-         action:(GddHudActionBlock)block;
+- (nonnull UIButton *)defaultButton:(NSString * _Nullable)text;
     
     /**
      * @note Animates if the superview of the hud is not nil
      */
-- (void)setText:(NSString *)text button:(NSString *)buttonTitle action:(GddHudActionBlock)block;
+- (void)setText:(NSString * _Nullable)text buttons:(NSArray * _Nullable)buttonTitles defaultButtonIndex:(int)index
+         action:(GddHudActionBlock _Nullable)block;
+    
+    /**
+     * @note Animates if the superview of the hud is not nil
+     */
+- (void)setText:(NSString * _Nullable)text button:(NSString * _Nullable)buttonTitle action:(GddHudActionBlock _Nullable)block;
     
     /**
      * Uses setText:button:action: with @"Ok" as a button title and dismiss as the action
      * @note Animates if the superview of the hud is not nil
      */
-- (void)setText:(NSString *)text;
+- (void)setText:(NSString * _Nullable)text;
     
     
-    @end
+@end
