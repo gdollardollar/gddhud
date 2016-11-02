@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+
+inhibit_all_warnings!
+use_frameworks!
+project '../GddHud.xcodeproj'
+workspace '../GddHud'
+
+pod 'GddHud’, path: ‘../‘
+
+target 'Example' do
+    
+end
+

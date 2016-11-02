@@ -1,0 +1,16 @@
+PODS:
+  - GddHud (1.1.3)
+
+DEPENDENCIES:
+  - GddHud (from `../`)
+
+EXTERNAL SOURCES:
+  GddHud:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GddHud: c66cd5dc072c07919b39135a29f4bf55bba6897d
+
+PODFILE CHECKSUM: 6f9b15472c679021a989a969fdfc6a6215031b88
+
+COCOAPODS: 1.1.1

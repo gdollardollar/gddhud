@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
  */
 @property (nonatomic, strong, nullable) GddHudActionBlock coverTapActionBlock;
 
-- (void)setDismissesOnCoverTap;
+- (nonnull instancetype)setDismissesOnCoverTap;
     
 //  ============================================
 //  Setting content
@@ -69,19 +69,19 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
 
 @property (nonatomic, assign, readonly) GddHudContentType contentType;
     
-- (void)setContent:(UIView * _Nonnull)content;
+- (nonnull instancetype)setContent:(UIView * _Nonnull)content;
     
 /**
  *  Base method for setting content.
  *  All other content method use this one.
  */
-- (void)setContent:(UIView * _Nonnull)content animated:(BOOL)animated;
+- (nonnull instancetype)setContent:(UIView * _Nonnull)content animated:(BOOL)animated;
     
-- (void)setContent:(UIView * _Nonnull)content animated:(BOOL)animated contentType:(GddHudContentType)contentType;
+- (nonnull instancetype)setContent:(UIView * _Nonnull)content animated:(BOOL)animated contentType:(GddHudContentType)contentType;
     
 @property (nonatomic, assign, readonly, getter=isLoading) BOOL loading;
     
-- (void)setLoading;
+- (nonnull instancetype)setLoading;
     
 //  ============================================
 //  Show / Dismiss
@@ -89,11 +89,11 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
 
 @property (nonatomic, assign, readonly) BOOL isDisplayed;
     
-- (void)showIfNeeded;
+- (nonnull instancetype)showIfNeeded;
     
-- (void)show;
-    
-- (void)dismiss;
+- (nonnull instancetype)show;
+
+- (nonnull instancetype)dismiss;
     
 //  ============================================
 //  UIAppearance Theming
@@ -150,19 +150,19 @@ typedef NS_ENUM(NSUInteger, GddHudContentType) {
     /**
      * @note Animates if the superview of the hud is not nil
      */
-- (void)setText:(NSString * _Nullable)text buttons:(NSArray * _Nullable)buttonTitles defaultButtonIndex:(int)index
+- (nonnull instancetype)setText:(NSString * _Nullable)text buttons:(NSArray * _Nullable)buttonTitles defaultButtonIndex:(int)index
          action:(GddHudActionBlock _Nullable)block;
     
     /**
      * @note Animates if the superview of the hud is not nil
      */
-- (void)setText:(NSString * _Nullable)text button:(NSString * _Nullable)buttonTitle action:(GddHudActionBlock _Nullable)block;
+- (nonnull instancetype)setText:(NSString * _Nullable)text button:(NSString * _Nullable)buttonTitle action:(GddHudActionBlock _Nullable)block;
     
     /**
      * Uses setText:button:action: with @"Ok" as a button title and dismiss as the action
      * @note Animates if the superview of the hud is not nil
      */
-- (void)setText:(NSString * _Nullable)text;
+- (nonnull instancetype)setText:(NSString * _Nullable)text;
     
     
 @end

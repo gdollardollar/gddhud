@@ -1,0 +1,6 @@
+framework module GddHud {
+  umbrella header "GddHud-umbrella.h"
+
+  export *
+  module * { export * }
+}

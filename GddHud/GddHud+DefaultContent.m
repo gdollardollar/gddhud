@@ -19,7 +19,7 @@
     return nil;
 }
 
--(void) setText:(NSString *)text buttons:(NSArray *)buttonTitles defaultButtonIndex:(int)defaultIndex
+-(instancetype) setText:(NSString *)text buttons:(NSArray *)buttonTitles defaultButtonIndex:(int)defaultIndex
          action:(GddHudActionBlock)block{
     
     if (text == nil) {
@@ -69,21 +69,21 @@
     view.frame = frame;
     [view addSubview:label];
 
-    [self setContent:view animated:self.willAnimateContentChange contentType:GddHudContentTypeDefault];
+    return [self setContent:view animated:self.willAnimateContentChange contentType:GddHudContentTypeDefault];
 }
 
 - (NSString *)defaultButtonTitle {
     return @"Ok";
 }
 
--(void) setText:(NSString *)text {
-    [self setText:text button:[self defaultButtonTitle] action:^BOOL(GddHud *hud, NSInteger index) {
+-(instancetype) setText:(NSString *)text {
+    return [self setText:text button:[self defaultButtonTitle] action:^BOOL(GddHud *hud, NSInteger index) {
         return YES;
     }];
 }
 
--(void) setText:(NSString *)text button:(NSString *)buttonTitle action:(GddHudActionBlock)block{
-    [self setText:text buttons:@[buttonTitle] defaultButtonIndex:0 action:block];
+-(instancetype) setText:(NSString *)text button:(NSString *)buttonTitle action:(GddHudActionBlock)block{
+    return [self setText:text buttons:@[buttonTitle] defaultButtonIndex:0 action:block];
 }
 
 -(void) hudButtonAction:(UIButton*)sender{
