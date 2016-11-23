@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GddHud"
-  s.version      = "1.1.3"
+  s.version      = "1.2.0"
   s.summary      = "Popup library for iOS"
   s.platform     = :ios, '7.0'
   s.homepage     = "https://github.com/gdollardollar/gddhud.git"

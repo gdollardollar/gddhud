@@ -5,7 +5,7 @@ use_frameworks!
 project '../GddHud.xcodeproj'
 workspace '../GddHud'
 
-pod 'GddHud’, path: ‘../‘
+pod 'GddHud', path: '../'
 
 target 'Example' do
     
